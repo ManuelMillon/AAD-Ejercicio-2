@@ -1,3 +1,4 @@
+import { People, PeopleService } from './../services/people.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
-
+  constructor(private people: PeopleService) {}
+  getTarjetas(): Tarjeta[] {
+    return this.people.getTarjetas();
+  }
 }
